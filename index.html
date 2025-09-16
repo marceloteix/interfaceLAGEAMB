@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Metadados Geoespaciais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Gerador de Metadados para QGIS (.qmd)</h1>
+        <p>Preencha os campos abaixo para gerar o arquivo de metadados.</p>
+
+        <form id="metadata-form">
+            <h2>Informações Gerais</h2>
+            <label for="title">Título:</label>
+            <input type="text" id="title" name="title" value="Manguezais sobrevoados com Drone" required>
+
+            <label for="abstract">Resumo (Abstract):</label>
+            <textarea id="abstract" name="abstract" rows="4" required>Manguezais vetorizados a partir do ortomosaico gerado pelo Drone</textarea>
+
+            <label for="type">Tipo de Arquivo:</label>
+            <select id="type" name="type">
+                <option value="GeoPackage">GeoPackage</option>
+                <option value="Shapefile">Shapefile</option>
+                <option value="GeoTIFF">GeoTIFF</option>
+                <option value="Dataset">Dataset</option>
+                <option value="Outro">Outro</option>
+            </select>
+            
+            <label for="language">Idioma:</label>
+            <input type="text" id="language" name="language" value="PT/BR">
+
+            <h2>Palavras-chave</h2>
+            <label for="keywords_gemet">Palavras-chave (Vocabulário GEMET):</label>
+            <input type="text" id="keywords_gemet" name="keywords_gemet" placeholder="Use ponto e vírgula para separar. Ex: Manguezais; Áreas protegidas">
+
+            <label for="keywords_topic">Categoria do Tópico (gmd:topicCategory):</label>
+            <input type="text" id="keywords_topic" name="keywords_topic" value="Biota (BIO)">
+
+            <h2>Contato</h2>
+            <label for="contact_name">Nome do Contato:</label>
+            <input type="text" id="contact_name" name="contact_name">
+
+            <label for="contact_org">Organização:</label>
+            <input type="text" id="contact_org" name="contact_org">
+            
+            <label for="contact_email">Email:</label>
+            <input type="email" id="contact_email" name="contact_email">
+
+            <h2>Histórico e Datas</h2>
+            <label for="history">Histórico:</label>
+            <textarea id="history" name="history" rows="4" placeholder="Descreva o processo de criação, fontes, etc."></textarea>
+            
+            <label for="date_created">Data de Criação dos Dados (ex: 2020-03-25):</label>
+            <input type="date" id="date_created" name="date_created">
+
+            <h2>Restrições e Direitos</h2>
+            <label for="constraints">Restrições de Acesso e Uso:</label>
+            <input type="text" id="constraints" name="constraints" value="Sem restrições">
+
+            <label for="rights">Direitos:</label>
+            <input type="text" id="rights" name="rights" value="Criação">
+
+            <div class="buttons">
+                <button type="button" onclick="generateFile('qmd')">Gerar Arquivo .qmd</button>
+                <button type="button" onclick="generateFile('xml')">Exportar como .xml</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

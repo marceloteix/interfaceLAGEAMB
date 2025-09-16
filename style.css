@@ -1,0 +1,150 @@
+/* Importação de fontes - O site LAGEAMB parece usar uma fonte sem serifa limpa, Arial ou similar é uma boa base */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap'); /* Exemplo: Roboto */
+
+body {
+    font-family: 'Roboto', Arial, sans-serif; /* Usando Roboto ou Arial como fallback */
+    background-color: #f8f8f8; /* Fundo branco/cinza bem claro */
+    color: #333; /* Texto principal em cinza escuro */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Alinha o conteúdo ao topo */
+    padding: 40px 20px; /* Mais padding em cima/baixo */
+    margin: 0;
+    min-height: 100vh; /* Garante que o body ocupa a altura total da viewport */
+}
+
+.container {
+    background: #ffffff; /* Fundo do container branco puro */
+    padding: 30px 40px; /* Mais padding interno */
+    border-radius: 8px; /* Cantos levemente arredondados */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08); /* Sombra mais suave e elevada */
+    max-width: 900px; /* Largura máxima um pouco maior para acomodar mais campos */
+    width: 100%;
+    border-top: 5px solid #6cb133; /* Uma linha verde no topo, simulando o cabeçalho do LAGEAMB */
+}
+
+h1 {
+    color: #333; /* Título principal mais escuro */
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2.2em; /* Título um pouco maior */
+    font-weight: 700; /* Mais negrito */
+}
+
+h2 {
+    color: #6cb133; /* Subtítulos em verde LAGEAMB */
+    border-bottom: 2px solid #e0e0e0; /* Linha divisória suave */
+    padding-bottom: 8px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    font-weight: 400; /* Menos negrito que o H1 */
+}
+
+p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666; /* Parágrafo em cinza médio */
+    font-size: 1.1em;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-weight: 500; /* Fonte um pouco mais encorpada */
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px; /* Padding maior nos campos */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Cantos mais arredondados */
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #555;
+    transition: border-color 0.3s ease-in-out; /* Transição suave na borda */
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #6cb133; /* Borda verde ao focar */
+    outline: none; /* Remove outline padrão do navegador */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px; /* Altura mínima para textareas */
+}
+
+.buttons {
+    margin-top: 40px;
+    text-align: center;
+}
+
+button {
+    background-color: #6cb133; /* Cor verde principal do LAGEAMB */
+    color: white;
+    padding: 14px 30px; /* Padding maior para botões mais robustos */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700; /* Texto do botão em negrito */
+    margin: 0 15px; /* Mais espaço entre os botões */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efeitos de transição */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15); /* Sombra nos botões */
+}
+
+button:hover {
+    background-color: #5a9b2c; /* Verde ligeiramente mais escuro no hover */
+    transform: translateY(-2px); /* Efeito de levantar no hover */
+}
+
+/* Para o botão "Exportar como .xml", podemos dar uma cor complementar se desejar,
+   mas para manter a consistência com o site, um verde um pouco diferente ou apenas a mesma cor é bom.
+   Vamos mantê-lo com a mesma cor principal para uniformidade. */
+/* button:last-child {
+    background-color: #4CAF50; 
+}
+
+button:last-child:hover {
+    background-color: #45a049;
+} */
+
+/* Estilo para links se houverem no futuro */
+a {
+    color: #6cb133;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade básica para telas menores */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 20px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    .buttons button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
