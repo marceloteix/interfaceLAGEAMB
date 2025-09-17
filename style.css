@@ -1,0 +1,345 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500;700&display=swap');
+
+/* O resto do seu CSS começa aqui... */
+/* --- ESTILOS DO CABEÇALHO (HEADER) --- */
+/* ... */
+
+/* Bloco 1: Body Corrigido com o fundo */
+/* Bloco 1: Body Corrigido com o fundo - AGORA COMO IMAGEM ÚNICA */
+/* Bloco 1: Body Corrigido para preenchimento total */
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+    background-color: #f8f8f8;
+    background-image: url('tudo.png');
+    background-repeat: repeat-x;     /* <-- ALTERADO: Repetir apenas na horizontal */
+    background-size: auto 200%;      /* <-- ALTERADO: Força a altura a ser 100% */
+    background-attachment: fixed;
+    background-position: center center;
+    color: #333;
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1400px;
+    width: 95%;
+     margin-top: 40px; 
+    margin-bottom: 40px;
+}
+
+/* --- Estilo para os Blocos/Cards do Formulário --- */
+.form-section {
+    background: #ffffff;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin-bottom: 25px; /* Espaço entre os cards */
+}
+
+h1 {
+    color: #ffffff; /* Título principal mais escuro */
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 2.2em; /* Título um pouco maior */
+    font-weight: 700; /* Mais negrito */
+}
+
+h2 {
+    color: #6cb133; /* Subtítulos em verde LAGEAMB */
+    border-bottom: 2px solid #e0e0e0; /* Linha divisória suave */
+    padding-bottom: 8px;
+    margin-top: 35px;
+    margin-bottom: 20px;
+    font-size: 1.6em;
+    font-weight: 400; /* Menos negrito que o H1 */
+}
+
+p {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #666; /* Parágrafo em cinza médio */
+    font-size: 1.1em;
+}
+
+label {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    font-weight: 500; /* Fonte um pouco mais encorpada */
+    color: #444;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px; /* Padding maior nos campos */
+    border: 1px solid #ccc;
+    border-radius: 5px; /* Cantos mais arredondados */
+    box-sizing: border-box;
+    font-size: 1em;
+    color: #555;
+    transition: border-color 0.3s ease-in-out; /* Transição suave na borda */
+    font-family: 'Montserrat Alternates', sans-serif; 
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="date"]:focus,
+select:focus,
+textarea:focus {
+    border-color: #6cb133; /* Borda verde ao focar */
+    outline: none; /* Remove outline padrão do navegador */
+    font-family: 'Montserrat Alternates', sans-serif; 
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px; /* Altura mínima para textareas */
+    font-family: 'Montserrat Alternates', sans-serif; 
+}
+
+.buttons {
+    margin-top: 40px;
+    text-align: center;
+}
+
+button {
+    background-color: #6cb133; /* Cor verde principal do LAGEAMB */
+    color: white;
+    padding: 14px 30px; /* Padding maior para botões mais robustos */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: 700; /* Texto do botão em negrito */
+    margin: 0 15px; /* Mais espaço entre os botões */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Efeitos de transição */
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15); /* Sombra nos botões */
+}
+
+button:hover {
+    background-color: #5a9b2c; /* Verde ligeiramente mais escuro no hover */
+    transform: translateY(-2px); /* Efeito de levantar no hover */
+}
+
+/* Para o botão "Exportar como .xml", podemos dar uma cor complementar se desejar,
+   mas para manter a consistência com o site, um verde um pouco diferente ou apenas a mesma cor é bom.
+   Vamos mantê-lo com a mesma cor principal para uniformidade. */
+/* button:last-child {
+    background-color: #4CAF50; 
+}
+
+button:last-child:hover {
+    background-color: #45a049;
+} */
+
+/* Estilo para links se houverem no futuro */
+a {
+    color: #6cb133;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Responsividade básica para telas menores */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 20px;
+    }
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+    .buttons button {
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+/* --- ESTILOS DO TOOLTIP (PONTO DE INTERROGAÇÃO) --- */
+
+/* O contêiner do tooltip que fica ao lado do label */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  margin-left: 8px; /* Espaço entre o texto do label e o '?' */
+  
+  /* Estilo do círculo '?' */
+  background-color: #aaa;
+  color: white;
+  border-radius: 50%; /* Deixa redondo */
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 18px; /* Alinha o '?' verticalmente */
+  font-size: 12px;
+  font-weight: bold;
+  cursor: help; /* Muda o cursor para indicar ajuda */
+}
+
+/* O texto do popup (invisível por padrão) */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 250px; /* Largura da caixa de texto */
+  background-color: #333; /* Fundo escuro */
+  color: #fff; /* Texto branco */
+  text-align: left;
+  font-weight: normal; /* Texto normal, sem negrito */
+  padding: 10px;
+  border-radius: 6px;
+  
+  /* Posicionamento do popup */
+  position: absolute;
+  z-index: 1;
+  bottom: 140%; /* Posiciona acima do '?' */
+  left: 50%;
+  margin-left: -125px; /* Metade da largura para centralizar */
+
+  /* Efeito de fade-in */
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+/* A setinha do popup (usando um truque com bordas) */
+.tooltip .tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: 100%; /* Na parte de baixo do popup */
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+/* Mostra o popup quando passamos o mouse sobre o '?' */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* --- ESTILOS DO CABEÇALHO (HEADER) --- */
+
+.site-header {
+    width: 100%;
+    background-color: #6cb133;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    position: relative; /* <-- LINHA ADICIONADA */
+    /* justify-content: center; */ /* <-- LINHA REMOVIDA */
+    color: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+    margin-bottom: -5px;
+}
+
+.site-header .logo {
+    max-height: 45px; /* Ajuste a altura da sua logo conforme necessário */
+    margin-right: 20px; /* Espaço entre a logo e o título */
+}
+
+.site-header h1 {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0; /* Remove qualquer margem que possa atrapalhar */
+}
+
+/* --- ESTILOS DO GRID DO FORMULÁRIO --- */
+
+.form-grid {
+    display: grid; /* Ativa o layout de grid */
+    grid-template-columns: 1fr; /* Por padrão (telas pequenas), temos 1 coluna */
+    gap: 15px 30px; /* Espaçamento entre as linhas e colunas */
+}
+
+/* Define que um grupo de formulário não tem margem no topo */
+.form-group {
+    margin-top: 0;
+}
+
+/* Regra para campos que devem ocupar a largura total sempre */
+.form-group.full-width {
+    grid-column: 1 / -1; /* Ocupa do início ao fim da linha do grid */
+}
+
+/* MEDIA QUERY: A mágica para telas grandes */
+/* Quando a tela tiver no mínimo 1024px de largura... */
+@media (min-width: 1024px) {
+    .form-grid {
+        /* ...o grid passará a ter 2 colunas de tamanho igual */
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* --- Estilo para o texto de exemplo (Placeholder) --- */
+/* Esta regra garante que a fonte e a cor do texto de exemplo sejam consistentes */
+
+/* Para navegadores modernos (Chrome, Firefox, Safari, Edge) */
+::placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #a9a9a9; /* Um cinza um pouco mais claro */
+  opacity: 1; /* Necessário para o Firefox */
+}
+
+/* Para Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #a9a9a9;
+}
+
+/* Para versões mais antigas do Microsoft Edge */
+::-ms-input-placeholder {
+  font-family: 'Montserrat Alternates', sans-serif;
+  color: #a9a9a9;
+}
+
+/* --- Estilo para o Card de Introdução Centralizado --- */
+.introduction-card {
+    text-align: center; /* Centraliza todo o texto dentro deste bloco */
+}
+
+.introduction-card h2 {
+    border-bottom: none; /* Remove a linha verde debaixo do título, fica melhor centralizado */
+    margin-bottom: 10px;  /* Ajusta o espaço abaixo do título */
+}
+
+/* --- Ajustes para Telas Pequenas (Responsividade) --- */
+
+/* Esta regra só será aplicada quando a largura da tela for 768px ou menor */
+@media (max-width: 1300px) {
+
+  /* 1. Ajusta o cabeçalho em telas menores */
+  .site-header {
+    padding: 10px 15px; /* Diminui o espaçamento interno para economizar espaço */
+    justify-content: center; /* Em telas pequenas, centraliza tudo (logo e texto juntos) */
+  }
+
+  /* 2. Ajusta o título no cabeçalho */
+  .site-header h1 {
+    position: static; /* Desativa o posicionamento "absoluto" que usamos para o desktop */
+    transform: none;  /* Remove a transformação que centralizava o texto */
+    font-size: 1.2em; /* Diminui o tamanho da fonte para caber melhor */
+    margin-left: 10px; /* Adiciona um pequeno espaço entre a logo e o título */
+  }
+
+  /* 3. Opcional: diminuir um pouco a logo para manter a proporção */
+  .site-header .logo {
+    max-height: 35px;
+  }
+}
