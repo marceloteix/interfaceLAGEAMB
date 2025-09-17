@@ -318,3 +318,29 @@ a:hover {
     border-bottom: none; /* Remove a linha verde debaixo do título, fica melhor centralizado */
     margin-bottom: 10px;  /* Ajusta o espaço abaixo do título */
 }
+
+/* --- Ajustes para Telas Pequenas (Responsividade) --- */
+
+/* Esta regra só será aplicada quando a largura da tela for 768px ou menor */
+@media (max-width: 1300px) {
+
+  /* 1. Ajusta o cabeçalho em telas menores */
+  .site-header {
+    padding: 10px 15px; /* Diminui o espaçamento interno para economizar espaço */
+    justify-content: center; /* Em telas pequenas, centraliza tudo (logo e texto juntos) */
+  }
+
+  /* 2. Ajusta o título no cabeçalho */
+  .site-header h1 {
+    position: static; /* Desativa o posicionamento "absoluto" que usamos para o desktop */
+    transform: none;  /* Remove a transformação que centralizava o texto */
+    font-size: 1.2em; /* Diminui o tamanho da fonte para caber melhor */
+    margin-left: 10px; /* Adiciona um pequeno espaço entre a logo e o título */
+  }
+
+  /* 3. Opcional: diminuir um pouco a logo para manter a proporção */
+  .site-header .logo {
+    max-height: 35px;
+  }
+}
+
