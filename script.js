@@ -87,7 +87,6 @@
     </dates>
     <fees>${values.fees}</fees>
     <constraints type="${values.constraint_type}">${values.constraint_desc}</constraints>
-    <rights>${values.rights}</rights>
     <rights>${values.rights}</rights>${licenseXML}
     <encoding></encoding>
     <extent>
