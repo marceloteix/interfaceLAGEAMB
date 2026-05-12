@@ -1,4 +1,12 @@
-  function generateFile(format) {
+ function generateFile(format) {
+    // 0. Verificar se o formulário está devidamente preenchido
+    const form = document.getElementById('metadata-form');
+    
+    if (!form.checkValidity()) {
+        // Se o formulário for inválido, o navegador mostrará quais campos faltam
+        form.reportValidity();
+        return; // Interrompe a função aqui e não gera o arquivo
+    }
       // 1. Coletar todos os valores do formulário
       const values = {
           identifier: '', // Pode ser preenchido ou gerado aleatoriamente se necessário
@@ -12,10 +20,14 @@
           contact_name: document.getElementById('contact_name').value,
           contact_org: document.getElementById('contact_org').value,
           contact_email: document.getElementById('contact_email').value,
+          license: document.getElementById('license').value,
           history: document.getElementById('history').value,
           date_created: document.getElementById('date_created').value,
           fees: '',
-          constraints: document.getElementById('constraints').value,
+          constraint_type: document.getElementById('constraint_type').value,
+          link_url: document.getElementById('link_url').value,
+          constraint_desc: document.getElementById('constraint_desc').value,
+          metadata_author: document.getElementById('metadata_author').value,
           rights: document.getElementById('rights').value
       };
 
@@ -29,6 +41,17 @@
           gemetKeywordsXML = `<keywords vocabulary="GEMET">
               <keyword>${values.keywords_gemet.join('; ')}</keyword>
           </keywords>`;
+      }
+
+      let licenseXML = '';
+      if (values.license !== '') {
+          licenseXML = `
+    <licenses>
+      <license>
+        <name>${values.license}</name>
+        <url></url>
+      </license>
+    </licenses>`;
       }
 
       // 2. Montar a estrutura XML/QMD usando Template Literals (crases ``)
@@ -54,16 +77,18 @@
       <role>pointOfContact</role>
     </contact>
     <links>
-      <link name="" url="nan" format="" mimeType="" description="" size="" type=""/>
+      <link name="" url="${values.link_url || 'nan'}" format="" mimeType="" description="" size="" type=""/>
     </links>
     <history>${values.history}</history>
+    <history>Responsável pelo metadado: ${values.metadata_author}</history>
     <history>Data de criação do metadado: ${metadataCreationDate}</history>
     <dates>
       <date value="${dateCreatedISO}" type="Created"/>
     </dates>
     <fees>${values.fees}</fees>
-    <constraints type="Não definido 1">${values.constraints}</constraints>
+    <constraints type="${values.constraint_type}">${values.constraint_desc}</constraints>
     <rights>${values.rights}</rights>
+    <rights>${values.rights}</rights>${licenseXML}
     <encoding></encoding>
     <extent>
       <spatial minz="0" miny="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" minx="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" maxy="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" maxz="0" maxx="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" dimensions="2"/>
