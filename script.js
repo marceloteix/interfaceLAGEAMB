@@ -25,7 +25,7 @@
           date_created: document.getElementById('date_created').value,
           fees: '',
           constraint_type: document.getElementById('constraint_type').value,
-          link_url: document.getElementById('link_url').value,
+          link_url: document.getElementById('link_url').value.replace(/&/g, '&amp;'),
           constraint_desc: document.getElementById('constraint_desc').value,
           metadata_author: document.getElementById('metadata_author').value,
           rights: document.getElementById('rights').value
