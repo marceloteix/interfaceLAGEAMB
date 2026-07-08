@@ -14,11 +14,6 @@
     </header>
 
    <div class="container">
-    <div class="form-section introduction-card">
-        <h2><strong>Gerador de Metadados</strong></h2>
-        <p>Preencha os campos abaixo para gerar o arquivo de metadados.</p>
-    </div>
-
     <form id="metadata-form">
 
     <div class="form-section">
@@ -86,7 +81,7 @@
             <div class="form-group full-width">
                 <label for="link_url">URL (Link): 
                      <span class="tooltip">?
-                        <span class="tooltiptext">Link para acesso (Opcional).</span>
+                        <span class="tooltiptext">Link para acesso ao conjunto de dados (Opcional).</span>
                     </span>
                 </label>
                 <input type="url" id="link_url" name="link_url" placeholder="Ex: https://www.lageamb.com.br/dados/mapa.zip">
@@ -113,23 +108,23 @@
                     </span>
                 </label>
                 <select id="keywords_topic" name="keywords_topic" required>
-                     <option value="Agricultura e Pecuária (AGP)">Agricultura e Pecuária (AGP)</option>
+                    <option value="Agricultura e Pecuária (AGP)">Agricultura e Pecuária (AGP)</option>
                     <option value="Áreas Protegidas (APT)">Áreas Protegidas (APT)</option>
                     <option value="Biota (BIO)" selected>Biota (BIO)</option>
-                    <option value="Climatologia, meteorologia e atmosfera (CLI)">Climatologia, meteorologia e atmosfera (CLI)</option>
-                    <option value="Cultura e lazer (LAZ)">Cultura e lazer (LAZ)</option>
+                    <option value="Climatologia, Meteorologia e Atmosfera (CLI)">Climatologia, Meteorologia e Atmosfera (CLI)</option>
+                    <option value="Cultura e Lazer (LAZ)">Cultura e Lazer (LAZ)</option>
                     <option value="Economia (ECN)">Economia (ECN)</option>
                     <option value="Edificações (EDF)">Edificações (EDF)</option>
                     <option value="Educação (EDU)">Educação (EDU)</option>
                     <option value="Energia e Comunicação (ECN)">Energia e Comunicação (ECN)</option>
                     <option value="Estrutura Econômica (ECO)">Estrutura Econômica (ECO)</option>
-                    <option value="Fiscalização e denúncias (FID)">Fiscalização e denúncias (FID)</option>
-                    <option value="Habitação, saneamento e urbanização (HSU)">Habitação, saneamento e urbanização (HSU)</option>
+                    <option value="Fiscalização e Denúncias (FID)">Fiscalização e Denúncias (FID)</option>
+                    <option value="Habitação, Saneamento e Urbanização (HSU)">Habitação, Saneamento e Urbanização (HSU)</option>
                     <option value="Hidrografia (HID)">Hidrografia (HID)</option>
-                    <option value="Imagem, mapas base e cobertura de Terra (MBI)">Imagem, mapas base e cobertura de Terra (MBI)</option>
-                    <option value="Informação geocientífica (IGC)">Informação geocientífica (IGC)</option>
+                    <option value="Imagem, Mapas Base e Cobertura de Terra (MBI)">Imagem, Mapas Base e Cobertura de Terra (MBI)</option>
+                    <option value="Informação Geocientífica (IGC)">Informação Geocientífica (IGC)</option>
                     <option value="Limites e Localidades (LML)">Limites e Localidades (LML)</option>
-                    <option value="Meio ambiente (MAB)">Meio ambiente (MAB)</option>
+                    <option value="Meio Ambiente (MAB)">Meio Ambiente (MAB)</option>
                     <option value="Oceanos (OCE)">Oceanos (OCE)</option>
                     <option value="Planejamento e Cadastro (PLC)">Planejamento e Cadastro (PLC)</option>
                     <option value="Pontos de Referência (PTO)">Pontos de Referência (PTO)</option>
@@ -151,7 +146,7 @@
                         <span class="tooltiptext">Nome da pessoa ou setor responsável pelo conjunto de dados.</span>
                     </span>
                 </label>
-                <input type="text" id="contact_name" name="contact_name" placeholder="Ex: Maria da Silva ou Coordenação de Projetos" required>
+                <input type="text" id="contact_name" name="contact_name" placeholder="Ex: Laura Beatriz" required>
             </div>
             
             <div class="form-group">
@@ -175,55 +170,8 @@
     </div>
     
     <div class="form-section">
-         <h2>Histórico e Direitos</h2>
-         <div class="form-group">
-                <label for="license">Licença: <span style="color: red;">*</span>
-                     <span class="tooltip">?
-                        <span class="tooltiptext" style="width: 400px; margin-left: -200px;">
-                            <strong>CC0:</strong> Domínio público. Uso livre e irrestrito, sem necessidade de crédito.<br><br>
-                            <strong>PDDL:</strong> Equivalente à CC0, mas juridicamente específica para bancos de dados.<br><br>
-                            <strong>CC BY:</strong> A mais flexível. Permite alteração e uso comercial, desde que dê os créditos.<br><br>
-                            <strong>ODC-By:</strong> Equivalente à CC BY, específica para bancos de dados.<br><br>
-                            <strong>CC BY-SA:</strong> Permite alteração e uso comercial. Exige créditos e que obras derivadas usem a mesma licença.<br><br>
-                            <strong>CC BY-NC:</strong> Permite alteração, exige créditos, mas proíbe o uso comercial.<br><br>
-                            <strong>CC BY-ND:</strong> Permite uso comercial, exige créditos, mas proíbe qualquer modificação no dado.<br><br>
-                            <strong>CC BY-NC-SA:</strong> Permite alteração. Exige créditos, proíbe uso comercial e derivadas devem ter a mesma licença.<br><br>
-                            <strong>CC BY-NC-ND:</strong> A mais restritiva. Apenas baixar e compartilhar com créditos. Sem uso comercial, sem alterações.<br><br>
-                            <strong>ODbL:</strong> Equivalente à CC BY-SA, específica para bancos de dados (exige crédito e compartilhamento igual).
-                        </span>
-                    </span>
-                </label>
-                <select id="license" name="license" required>
-                    <option value="" disabled selected>Selecione uma licença</option>
-                    <option value="Creative Commons CC Zero">Creative Commons CC Zero (CC0)</option>
-                    <option value="Open Data Commons Public Domain Dedication and Licence">Open Data Commons Public Domain Dedication and Licence (PDDL)</option>
-                    <option value="Creative Commons Attribution 4.0">Creative Commons Attribution 4.0 (CC BY)</option>
-                    <option value="Open Data Commons Attribution License">Open Data Commons Attribution License (ODC-By)</option>
-                    <option value="Creative Commons Attribution Share-Alike 4.0">Creative Commons Attribution Share-Alike 4.0 (CC BY-SA)</option>
-                    <option value="Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC)">Creative Commons Attribution-NonCommercial 4.0 (CC BY-NC)</option>
-                    <option value="Creative Commons Attribution-NoDerivatives 4.0 (CC BY-ND)">Creative Commons Attribution-NoDerivatives 4.0 (CC BY-ND)</option>
-                    <option value="Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC BY-NC-SA)">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 (CC BY-NC-SA)</option>
-                    <option value="Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 (CC BY-NC-ND)">Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 (CC BY-NC-ND)</option>
-                    <option value="Open Data Commons Open Database License">Open Data Commons Open Database License (ODbL)</option>
-                </select>
-            </div>
-         <div class="form-grid">
-            <div class="form-group full-width">
-                <label for="history">Histórico: <span style="color: red;">*</span>
-                     <span class="tooltip">?
-                        <span class="tooltiptext">Descreva o processo de criação, as fontes dos dados, as transformações aplicadas e outras informações sobre a linhagem do dado.</span>
-                    </span>
-                </label>
-                <textarea id="history" name="history" rows="4" placeholder="Descreva o processo de criação, fontes, etc." required></textarea>
-            </div>
-            <div class="form-group">
-                <label for="metadata_author">Responsável pelo Metadado: <span style="color: red;">*</span>
-                     <span class="tooltip">?
-                        <span class="tooltiptext">Nome do profissional responsável por preencher e gerar este arquivo de metadados.</span>
-                    </span>
-                </label>
-                <input type="text" id="metadata_author" name="metadata_author" placeholder="Ex: João da Silva" required>
-            </div>
+        <h2>Histórico e Direitos</h2>
+        <div class="form-grid">
             <div class="form-group">
                 <label for="constraint_type">Tipo de Restrição: <span style="color: red;">*</span>
                      <span class="tooltip">?
@@ -232,42 +180,75 @@
                 </label>
                 <select id="constraint_type" name="constraint_type" required>
                     <option value="Sem restrição" selected>Sem restrições</option>
+                    <option value="Restrito pela LGPD">Restrito pela LGPD</option>
+                    <option value="Sigiloso pela LGPD">Sigiloso pela LGPD</option>
+                    <option value="Restrito pela Lei de Seg. Nacional">Restrito pela Lei de Seg. Nacional</option>
+                    <option value="Restrição do Financiador">Restrição do Financiador</option>
                     <option value="Aguardando publicação">Aguardando publicação</option>
-                    <option value="Somente acesso aos integrantes do projeto">Somente acesso aos integrantes do projeto</option>
-                    <option value="Informações sensíveis (LGPD)">Informações sensíveis (LGPD)</option>
-                    <option value="Restrito (outros)">Restrito (outros)</option>
+                    <option value="Outras">Outras</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="constraint_desc">Descrição da Restrição: 
+                <label for="constraint_desc">Descrição da Restrição: <span style="color: red;">*</span>
                      <span class="tooltip">?
                         <span class="tooltiptext">Descreva a restrição detalhadamente. Se não houver, escreva "Sem restrições".</span>
                     </span>
                 </label>
-                <input type="text" id="constraint_desc" name="constraint_desc" placeholder="Ex: Sem restrições">
+                <input type="text" id="constraint_desc" name="constraint_desc" placeholder="Ex: Sem restrições" required>
             </div>
 
             <div class="form-group">
-                <label for="rights">Direitos (Status): <span style="color: red;">*</span>
+                <label for="license">Licença: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">
+                            <strong>CC BY:</strong> A mais flexível. Permite alteração e uso comercial, desde que dê os créditos.<br><br>
+                            <em>Caso necessite de outra licença, consulte o GT de dados do laboratório.</em>
+                        </span>
+                    </span>
+                </label>
+                <select id="license" name="license" required>
+                    <option value="" disabled>Selecione uma licença</option>
+                    <option value="Creative Commons Attribution 4.0" selected>Creative Commons Attribution 4.0 (CC BY)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="rights">Condição do Dado: <span style="color: red;">*</span>
                     <span class="tooltip">?
                         <span class="tooltiptext">
-                            <strong>Criação:</strong> Refere-se à versão inicial do conjunto de dados, quando foi gerado pela primeira vez.<br><br>
-                            <strong>Revisão:</strong> Indica que o conjunto de dados passou por um processo de verificação, correção ou atualização.<br><br>
-                            <strong>Publicação:</strong> Marca a versão do dado que foi finalizada e disponibilizada para uso ou consulta.<br><br>
-                            <strong>Aquisição:</strong> Dados que não foram gerados pela equipe, mas sim obtidos, baixados ou comprados de fontes externas/terceiros.
+                            <strong>Dado Primário:</strong> Refere-se à versão inicial do conjunto de dados, quando foi gerado pela primeira vez.<br><br>
+                            <strong>Dado derivado:</strong> Indica que o conjunto de dados passou por um processo de revisão, correção ou atualização.<br><br>
+                            <strong>Dado Republicado:</strong> Dado que foi adquirido e republicado sem qualquer alteração.
                         </span>
                     </span>
                 </label>
                 <select id="rights" name="rights" required>
-                    <option value="Criação" selected>Criação</option>
-                    <option value="Publicação">Publicação</option>
-                    <option value="Revisão">Revisão</option>
-                    <option value="Aquisição">Aquisição</option>
+                    <option value="Dado Primário" selected>Dado Primário</option>
+                    <option value="Dado Derivado">Dado Derivado</option>
+                    <option value="Dado Republicado">Dado Republicado</option>
                 </select>
             </div>
-         </div>
-    </div> 
+
+            <div class="form-group full-width">
+                <label for="history">Histórico: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Descreva o processo de criação, as fontes dos dados, as transformações aplicadas e outras informações sobre a linhagem do dado.</span>
+                    </span>
+                </label>
+                <textarea id="history" name="history" rows="4" placeholder="Descreva o processo de criação, fontes, etc." required></textarea>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="metadata_author">Responsável pelo Metadado: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Nome do profissional responsável por preencher e gerar este arquivo de metadados.</span>
+                    </span>
+                </label>
+                <input type="text" id="metadata_author" name="metadata_author" placeholder="Ex: Nathan Damas" required>
+            </div>
+        </div>
+    </div>
     
     <div class="buttons">
         <button type="button" onclick="generateFile('qmd')">Gerar Arquivo .qmd</button>
