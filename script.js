@@ -127,3 +127,36 @@
       link.click();
       document.body.removeChild(link);
   }
+
+// Lógica para gerenciar as regras de Restrição, Licença e Descrição
+  document.addEventListener('DOMContentLoaded', function() {
+      const constraintTypeSelect = document.getElementById('constraint_type');
+      const licenseSelect = document.getElementById('license');
+      const constraintDescInput = document.getElementById('constraint_desc'); // Pegando o campo de descrição
+      
+      function handleConstraintChange() {
+          if (constraintTypeSelect.value !== 'Sem restrição') {
+              licenseSelect.value = ''; // Reseta a licença
+              licenseSelect.disabled = true; // Impede a seleção bloqueando o campo
+              licenseSelect.removeAttribute('required'); // Deixa de ser obrigatório
+              
+              // Se o usuário mudou a restrição, limpamos a descrição para ele digitar a nova
+              if (constraintDescInput.value === 'Sem restrições') {
+                  constraintDescInput.value = '';
+              }
+          } else {
+              licenseSelect.disabled = false; // Libera o campo novamente
+              licenseSelect.setAttribute('required', 'required'); // Volta a ser obrigatório
+              licenseSelect.value = 'Creative Commons Attribution 4.0'; // Reatribui a licença CC BY automaticamente
+              
+              // Preenche automaticamente a descrição (agora no plural)
+              constraintDescInput.value = 'Sem restrições';
+          }
+      }
+
+      // Escuta as mudanças toda vez que o usuário alterar o select
+      constraintTypeSelect.addEventListener('change', handleConstraintChange);
+      
+      // Executa a verificação assim que a página carrega, garantindo que o texto já apareça preenchido de cara
+      handleConstraintChange();
+  });
