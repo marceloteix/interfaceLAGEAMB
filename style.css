@@ -360,11 +360,11 @@ label[for="rights"]::after {
     font-weight: bold;
 }
 
-
+  /* 3. Opcional: diminuir um pouco a logo para manter a proporção */
   .site-header .logo {
     max-height: 35px;
   }
-
+/* Método para adicionar o asterisco nos campos obrigatórios */
 label[for="filename_input"]::after,
 label[for="title"]::after,
 label[for="type"]::after,
@@ -376,11 +376,12 @@ label[for="keywords_topic"]::after,
 label[for="contact_name"]::after,
 label[for="contact_org"]::after,
 label[for="contact_email"]::after,
-label[for="license"]::after,
-label[for="history"]::after,
-label[for="metadata_author"]::after,
 label[for="constraint_type"]::after,
-label[for="rights"]::after {
+label[for="constraint_desc"]::after,
+label[for="license"]::after,
+label[for="rights"]::after,
+label[for="history"]::after,
+label[for="metadata_author"]::after {
     content: " *";
     color: #e74c3c;
     font-weight: bold;
