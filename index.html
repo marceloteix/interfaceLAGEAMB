@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Metadados Geoespaciais</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <img src="imagens/logo.png" alt="Logo do Projeto" class="logo">
+        <h1>Gerador de Metadados LAGEAMB</h1>
+    </header>
+
+   <div class="container">
+    <form id="metadata-form">
+
+    <div class="form-section">
+        <h2>Informações Gerais</h2>
+        <div class="form-grid">
+            <div class="form-group full-width">
+                <label for="filename_input">Nome do Arquivo: <span style="color: red;">*</span>
+                    <span class="tooltip">?
+                        <span class="tooltiptext">As 3 primeiras letras devem ser a sigla da Categoria Temática em maiúsculo, seguido de "_".<br><br>O nome do arquivo não deve conter espaços ou caracteres especiais.<br></span>
+                    </span>
+                </label>
+                <input type="text" id="filename_input" name="filename_input" placeholder="ex: HID_nomeDoArquivo" required>
+            </div>
+
+            <div class="form-group">
+                <label for="title">Título: <span style="color: red;">*</span>
+                    <span class="tooltip">?
+                        <span class="tooltiptext">O nome pelo qual o conjunto de dados deve ser conhecido. Ex: "Mapa de Uso e Cobertura do Solo - 2025".</span>
+                    </span>
+                </label>
+                <input type="text" id="title" name="title" placeholder="Ex: Mapa de Uso e Cobertura do Solo - 2025" required>
+            </div>
+
+            <div class="form-group">
+                <label for="type">Tipo de Arquivo: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">O formato digital do dado, por exemplo, Shapefile, GeoPackage, GeoTIFF.</span>
+                    </span>
+                </label>
+                <select id="type" name="type" required>
+                    <option value="GeoPackage">GeoPackage</option>
+                    <option value="Shapefile">Shapefile</option>
+                    <option value="GeoTIFF">GeoTIFF</option>
+                    <option value="Dataset">Dataset</option>
+                    <option value="Outro">Outro</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="abstract">Resumo (Abstract): <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Uma breve descrição do conteúdo do conjunto de dados, explicando o que ele representa e seu propósito.</span>
+                    </span>
+                </label>
+                <textarea id="abstract" name="abstract" rows="4" placeholder="Descreva o conteúdo do conjunto de dados, seu propósito, a área de abrangência e a data de referência..." required></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="language">Idioma: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">O idioma utilizado nos metadados. Use o padrão de abreviação, como PT/BR para Português do Brasil.</span>
+                    </span>
+                </label>
+                <input type="text" id="language" name="language" value="PT/BR" required>
+            </div>
+            
+             <div class="form-group">
+                <label for="date_created">Data de Criação dos Dados: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">A data em que os dados foram efetivamente criados ou coletados.</span>
+                    </span>
+                </label>
+                <input type="date" id="date_created" name="date_created" required>
+            </div>
+            <div class="form-group full-width">
+                <label for="link_url">URL (Opcional): 
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Endereço para acesso ao dado (Opcional).</span>
+                    </span>
+                </label>
+                <input type="url" id="link_url" name="link_url" placeholder="Ex: https://www.lageamb.com.br/dados/mapa.zip">
+            </div>
+        </div>
+    </div> 
+    
+    <div class="form-section">
+        <h2>Palavras-chave</h2>
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="keywords_gemet">Palavras-chave: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Termos para descrever o dado. Use ponto e vírgula (;) para separar múltiplos termos. Ex: Manguezais; Áreas protegidas; Sensoriamento Remoto.</span>
+                    </span>
+                </label>
+                <input type="text" id="keywords_gemet" name="keywords_gemet" placeholder="Use ponto e vírgula para separar. Ex: Manguezais; Áreas protegidas" required>
+            </div>
+
+            <div class="form-group">
+                <label for="keywords_topic">Categoria Temática: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Escolha uma categoria temática, conforme Manual Técnico de Gestão e Padronização de Dados Geoespaciais do LAGEAMB. Ex: Biota (BIO), Meio Ambiente (MAB).</span>
+                    </span>
+                </label>
+                <select id="keywords_topic" name="keywords_topic" required>
+                    <option value="Agricultura e Pecuária (AGP)">Agricultura e Pecuária (AGP)</option>
+                    <option value="Áreas Protegidas (APT)">Áreas Protegidas (APT)</option>
+                    <option value="Biota (BIO)" selected>Biota (BIO)</option>
+                    <option value="Climatologia, Meteorologia e Atmosfera (CLI)">Climatologia, Meteorologia e Atmosfera (CLI)</option>
+                    <option value="Cultura e Lazer (LAZ)">Cultura e Lazer (LAZ)</option>
+                    <option value="Economia (ECN)">Economia (ECN)</option>
+                    <option value="Edificações (EDF)">Edificações (EDF)</option>
+                    <option value="Educação (EDU)">Educação (EDU)</option>
+                    <option value="Energia e Comunicação (ECN)">Energia e Comunicação (ECN)</option>
+                    <option value="Estrutura Econômica (ECO)">Estrutura Econômica (ECO)</option>
+                    <option value="Fiscalização e Denúncias (FID)">Fiscalização e Denúncias (FID)</option>
+                    <option value="Habitação, Saneamento e Urbanização (HSU)">Habitação, Saneamento e Urbanização (HSU)</option>
+                    <option value="Hidrografia (HID)">Hidrografia (HID)</option>
+                    <option value="Imagem, Mapas Base e Cobertura de Terra (MBI)">Imagem, Mapas Base e Cobertura de Terra (MBI)</option>
+                    <option value="Informação Geocientífica (IGC)">Informação Geocientífica (IGC)</option>
+                    <option value="Limites e Localidades (LML)">Limites e Localidades (LML)</option>
+                    <option value="Meio Ambiente (MAB)">Meio Ambiente (MAB)</option>
+                    <option value="Oceanos (OCE)">Oceanos (OCE)</option>
+                    <option value="Planejamento e Cadastro (PLC)">Planejamento e Cadastro (PLC)</option>
+                    <option value="Pontos de Referência (PTO)">Pontos de Referência (PTO)</option>
+                    <option value="Riscos (RSC)">Riscos (RSC)</option>
+                    <option value="Saúde (SAU)">Saúde (SAU)</option>
+                    <option value="Sociedade (SOC)">Sociedade (SOC)</option>
+                    <option value="Transporte (TRA)">Transporte (TRA)</option>
+                </select>
+            </div>
+        </div>
+    </div> 
+    
+   <div class="form-section">
+        <h2>Contato</h2>
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="contact_name">Nome do Contato: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Nome da equipe, setor ou pessoa responsável pelo conjunto de dados.</span>
+                    </span>
+                </label>
+                <input type="text" id="contact_name" name="contact_name" placeholder="Ex: Laura Beatriz" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="contact_org">Organização: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Nome da organização ou instituição do ponto de contato.</span>
+                    </span>
+                </label>
+                <input type="text" id="contact_org" name="contact_org" placeholder="Ex: LAGEAMB" required>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="contact_email">Email: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Endereço de e-mail para contato sobre o conjunto de dados.</span>
+                    </span>
+                </label>
+                <input type="email" id="contact_email" name="contact_email" placeholder="Ex: contato@lageamb.com.br" required>
+            </div>
+        </div>
+    </div>
+    
+    <div class="form-section">
+        <h2>Histórico e Direitos</h2>
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="constraint_type">Tipo de Restrição: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Selecione o nível de restrição aplicado ao conjunto de dados.</span>
+                    </span>
+                </label>
+                <select id="constraint_type" name="constraint_type" required>
+                    <option value="Sem restrição" selected>Sem restrições</option>
+                    <option value="Restrito pela LGPD">Restrito pela LGPD</option>
+                    <option value="Sigiloso pela LGPD">Sigiloso pela LGPD</option>
+                    <option value="Restrito pela Lei de Seg. Nacional">Restrito pela Lei de Seg. Nacional</option>
+                    <option value="Restrição do Financiador">Restrição do Financiador</option>
+                    <option value="Aguardando publicação">Aguardando publicação</option>
+                    <option value="Outras">Outras</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="constraint_desc">Descrição da Restrição: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Descreva a restrição detalhadamente. Se não houver, escreva "Sem restrições".</span>
+                    </span>
+                </label>
+                <input type="text" id="constraint_desc" name="constraint_desc" placeholder="Ex: Sem restrições" required>
+            </div>
+
+            <div class="form-group">
+                <label for="license">Licença: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">
+                            <strong>CC BY:</strong> A mais flexível. Permite alteração e uso comercial, desde que dê os créditos.<br><br>
+                            <em>Caso necessite de outra licença, consulte o GT de dados do laboratório.</em>
+                        </span>
+                    </span>
+                </label>
+                <select id="license" name="license" required>
+                    <option value="" disabled>Selecione uma licença</option>
+                    <option value="Creative Commons Attribution 4.0" selected>Creative Commons Attribution 4.0 (CC BY)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="rights">Condição do Dado: <span style="color: red;">*</span>
+                    <span class="tooltip">?
+                        <span class="tooltiptext">
+                            <strong>Dado Primário:</strong> Refere-se à versão inicial do conjunto de dados, quando foi gerado pela primeira vez.<br><br>
+                            <strong>Dado derivado:</strong> Indica que o conjunto de dados passou por um processo de revisão, correção ou atualização.<br><br>
+                            <strong>Dado Republicado:</strong> Dado que foi adquirido e republicado sem qualquer alteração.
+                        </span>
+                    </span>
+                </label>
+                <select id="rights" name="rights" required>
+                    <option value="Dado Primário" selected>Dado Primário</option>
+                    <option value="Dado Derivado">Dado Derivado</option>
+                    <option value="Dado Republicado">Dado Republicado</option>
+                </select>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="metadata_author">Responsável pelo Metadado: <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Nome do profissional responsável por preencher e gerar este arquivo de metadados.</span>
+                    </span>
+                </label>
+                <input type="text" id="metadata_author" name="metadata_author" placeholder="Ex: Nathan Damas" required>
+            </div>
+
+            <div class="form-group full-width">
+                <label for="history">Histórico (Linhagem): <span style="color: red;">*</span>
+                     <span class="tooltip">?
+                        <span class="tooltiptext">Descreva o processo de criação, as fontes dos dados, as transformações aplicadas e outras informações sobre a linhagem do dado, conforme orientações abaixo.</span>
+                    </span>
+                </label>
+                <textarea id="history" name="history" rows="16" style="resize: vertical; min-height: 480px;" required placeholder="Descreva o histórico de linhagem do dado geoespacial detalhando:
+
+• CONDIÇÃO, ORIGEM E TIPO DO DADO: a condição do dado (dado primário, secundário ou republicado), a origem do dado (e.g.: imagens de satélite, dados do IBGE, levantamentos de campo), o tipo do dado (e.g.: vetorial, raster) e o formato do arquivo (e.g.: geopackage, shapefile, TIFF).
+
+• CARACTERÍSTICAS DA FONTE: sua resolução espacial e/ou escala original, o nível de processamento (e.g.: reflectância de superfície) e respectiva data de aquisição.
+
+• TEMPORALIDADE: a extensão temporal que o produto final representa (e.g.: série temporal) e sua frequência de atualização (e.g.: estático, contínuo, anual).
+
+• REFERÊNCIA ESPACIAL: a abrangência do dado (e.g.: o dado é referente as áreas de APP do Litoral do Paraná), o Sistema de Referência de Coordenadas e o Datum utilizado (e.g.: WGS 84, UTM, Geográficas).
+
+• PROCESSAMENTO: as operações de geoprocessamento aplicadas ao longo do processo (vetorização, reprojeção, correção topológica, interpolação, recortes).
+
+• VALIDAÇÃO: dados de apoio ou malhas de terceiros utilizadas para validação/limites e a qualidade geométrica/tolerância de erro alcançada (validação posicional, Padrão de Exatidão Cartográfica).
+
+• FERRAMENTAS E AUTORIA: software ou linguagem de programação (QGIS, ArcGIS, Google Earth Engine, Python) utilizado, junto com a equipe, setor ou pessoa responsável pela criação do dado e metadado.
+
+• FONTES E DIREITOS: caminho para a fonte original dos dados e metadados utilizados, repositório de código e a licença e/ou tipo de restrição de uso aplicável ao produto."></textarea>
+            </div>
+
+           
+        </div>
+    </div>
+    
+    <div class="buttons">
+        <button type="button" onclick="generateFile('qmd')">Gerar Arquivo .qmd</button>
+        <button type="button" onclick="generateFile('xml')">Exportar como .xml</button>
+    </div>
+</form>
+
+    </div>
+
+    <footer class="site-footer" style="width:100%; box-sizing:border-box; background-color:#6cb133; color:#ffffff; padding:30px 40px; box-shadow:0 -2px 5px rgba(0,0,0,0.2); text-align:center; margin-top:auto;">
+       <div class="footer-contacts" style="display:flex; justify-content:center; flex-wrap:wrap; gap:15px 30px; margin:0 0 25px 0; padding-bottom:25px; border-bottom:1px solid rgba(255,255,255,0.3);">
+            <a href="mailto:lageamb@ufpr.br" class="footer-link" style="display:inline-flex; align-items:center; gap:8px; color:#ffffff; fill:#ffffff; font-weight:500; text-decoration:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <span>lageamb@ufpr.br</span>
+            </a>
+
+            <a href="https://lageamb.ufpr.br/" target="_blank" rel="noopener" class="footer-link" style="display:inline-flex; align-items:center; gap:8px; color:#ffffff; fill:#ffffff; font-weight:500; text-decoration:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
+                <span>lageamb.ufpr.br</span>
+            </a>
+
+            <a href="https://instagram.com/lageamb" target="_blank" rel="noopener" class="footer-link" style="display:inline-flex; align-items:center; gap:8px; color:#ffffff; fill:#ffffff; font-weight:500; text-decoration:none;">
+                <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41-.56-.22-.96-.48-1.38-.9-.42-.42-.68-.82-.9-1.38-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.31-1.46.72-2.13 1.38C1.35 2.68.94 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.31.79.72 1.46 1.38 2.13.67.66 1.34 1.07 2.13 1.38.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.31 1.46-.72 2.13-1.38.66-.67 1.07-1.34 1.38-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.31-.79-.72-1.46-1.38-2.13C21.32 1.35 20.65.94 19.86.63 19.1.33 18.22.13 16.95.07 15.67.01 15.26 0 12 0zm0 5.84A6.16 6.16 0 1018.16 12 6.16 6.16 0 0012 5.84zM12 16a4 4 0 114-4 4 4 0 01-4 4zm6.41-10.85a1.44 1.44 0 101.44 1.44 1.44 1.44 0 00-1.44-1.44z"/></svg>
+                <span>@lageamb</span>
+            </a>
+        </div>
+
+       <div class="footer-authors" style="margin-bottom:25px; padding-bottom:25px; border-bottom:1px solid rgba(255,255,255,0.3);">
+            <h3 style="margin:0 0 8px 0; font-size:1em; font-weight:500; text-transform:uppercase; letter-spacing:1px; color:#ffffff; opacity:0.9;">Desenvolvido por</h3>
+            <p style="margin:0; color:#ffffff; font-size:0.95em; font-weight:700;">Marcelo Teixeira &bull; Nathan Damas Antonio &bull; Laura Beatriz Krama</p>
+        </div>
+
+        <div class="footer-copyright">
+            <p style="margin:0; color:#ffffff; font-size:0.95em; opacity:0.9;">&copy; 2026 LAGEAMB</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
